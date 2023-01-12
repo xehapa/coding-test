@@ -1,6 +1,3 @@
-const pattern = 'staticOne/:paramOne/staticTwo/staticThree/:paramTwo';
-
-
 const getUrlParams = (path: string, pattern: string): Record<string, string | number> => {
     const a = pattern.split('/')
     const b = path.split('/')
@@ -31,16 +28,14 @@ const objectDiff = (source: Data, target: Data): Record<string, object> => {
         const key = k as keyof Data;
 
         if (source?.[key] !== target[key]) {
-            o = { ...o, [k as keyof Data]: {
-                    old: source[key],
-                    new: target[key]
-                }
-            }
+            o = { ...o, [k as keyof Data]: { old: source[key], new: target[key] } }
         }
     }
 
     return o;
 }
+
+const pattern = 'staticOne/:paramOne/staticTwo/staticThree/:paramTwo';
 
 const params = [
     'staticZero/one',
