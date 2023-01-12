@@ -24,7 +24,7 @@ const getUrlParams = (path: string, pattern: string): Record<string, string | nu
 
 type Data = { id: string, name?: string, count: number }
 
-const objectDiff = (source: Data, target: Data) => {
+const objectDiff = (source: Data, target: Data): Record<string, object> => {
     let o = {}
 
     for (const k of Object.keys(target)) {
