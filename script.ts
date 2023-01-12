@@ -28,7 +28,6 @@ const objectDiff = (source: Data, target: Data) => {
     let o = {}
 
     for (const k of Object.keys(target)) {
-        // console.log(k);
         const key = k as keyof Data;
 
         if (source?.[key] !== target[key]) {
